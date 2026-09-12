@@ -14,6 +14,15 @@ Hey everybody!!!
       - [**Supervised Learning**](#supervised-learning)
         - [**Classification**](#classification)
         - [**Regression**](#regression)
+      - [**Unsupervised Learning**](#unsupervised-learning)
+        - [**Clustering**](#clustering)
+        - [**Dimensionality Reduction**](#dimensionality-reduction)
+        - [**Anomaly Detection**](#anomaly-detection)
+      - [**Semi-Supervised Learning**](#semi-supervised-learning)
+      - [**Self-Supervised Learning**](#self-supervised-learning)
+      - [**Reinforcement Learning**](#reinforcement-learning)
+      - [**Supervised vs Unsupervised**](#supervised-vs-unsupervised)
+    - [**Real-World ML workflow**](#real-world-ml-workflow)
 
 # **ML and Data Foundations**
 
@@ -896,4 +905,243 @@ Cat / Dog / Horse
 ---
 
 ##### **Regression**
+
+*Regression is a supervised learning problem where the model predicts a continuous numerical value.*
+
+**Examples:**
+
+```txt
+House price
+Salary
+Temperature
+Sales
+Revenue
+Demand
+```
+
+*For example*
+
+```txt
+House features
+      ↓
+ML Model
+      ↓
+₹82,50,000
+```
+
+*The output is a number.*
+
+---
+
+**Classification vs Regression**
+
+| Classification            | Regression                     |
+| ------------------------- | ------------------------------ |
+| Predicts a class/category | Predicts a numerical value     |
+| Output is discrete        | Output is generally continuous |
+| Example: Spam/Not Spam    | Example: House price           |
+| Example: Churn/No Churn   | Example: Sales amount          |
+| Example: Fraud/Legitimate | Example: Temperature           |
+
+---
+
+#### **Unsupervised Learning**
+
+*Unsupervised learning works with data where the desired target labels are not provided, and the goal is to discover useful structure or patterns in the data.*
+
+---
+
+```txt
+Data
+ ↓
+Algorithm
+ ↓
+Discover structure/patterns
+```
+
+**Example:** *Customer Segmentation*
+
+*Suppose a company has customer information*
+
+```txt
+Age
+Income
+Purchase frequency
+Spending
+```
+
+*But there is no label saying*
+
+```txt
+Customer A → Segment 1
+Customer B → Segment 2
+```
+
+*We can ask the algorithm "Can you find groups or similar customers?"*
+
+*The model might discover*
+
+```txt
+Group 1 → High spending
+Group 2 → Low spending
+Group 3 → Frequent buyers
+```
+
+*This is unsupervised learning.*
+
+---
+
+**Main Unsupervised Types**
+
+```txt
+Unsupervised Learning
+│
+├── Clustering
+├── Dimensionality Reduction
+└── Anomaly Detection
+```
+
+---
+
+##### **Clustering**
+
+*Group similar data points together.*
+
+**Example:**
+
+```txt
+Customers
+    ↓
+Clustering
+    ↓
+Customer Groups
+```
+
+**Common example:** *Customer segmentation*
+
+---
+
+##### **Dimensionality Reduction**
+
+*Reduce the number of features while trying to preserve important information.*
+
+*Suppose we have ```100 features``` We may want a representation with ```10 dimensions``` while retaining as much useful information as possible.*
+
+*One important technique is ```PCA - Principal Component Analysis```*
+
+---
+
+##### **Anomaly Detection**
+
+*Identify observations that are unusual compared with normal patterns.*
+
+**Example:**
+
+```txt
+Normal transactions
+Normal transactions
+Normal transactions
+        ↓
+Unusual transaction
+        ↓
+Potential anomaly
+```
+
+*Applications include Fraud detection, Network monitoring, Equipment monitoring.*
+
+---
+
+#### **Semi-Supervised Learning**
+
+*Semi-supervised learning combines labeled and unlabeled data during learning, which can be useful when labeled data is limited but unlabeled data is abundant.*
+
+*You have*
+
+```txt
+Small amount of labeled data
++
+Large amount of unlabeled data
+```
+
+**Example:**
+
+```txt
+1,000 labeled images
++
+100,000 unlabeled images
+```
+
+*The learning approach uses both*
+
+---
+
+#### **Self-Supervised Learning**
+
+*The system creates a learning signal from the data itself rather than requiring humans to manually provide every label.*
+
+*For example, a model may be given part of sentence and trained to predict a missing/next part.*
+
+```txt
+Text:
+"The cat is sitting on the ___"
+
+             ↓
+
+Model predicts:
+"mat"
+```
+
+*The training signal comes from the original data itself*
+
+---
+
+#### **Reinforcement Learning**
+
+*Reinforcement Learning is a type of learning where an agent interacts with an environment and learns actions through rewards and penalties.*
+
+```txt
+Agent
+  ↓
+Action
+  ↓
+Environment
+  ↓
+Reward / Penalty
+  ↓
+Learn better actions
+```
+
+**Example:** *A game-playing agent*
+
+```txt
+Move
+ ↓
+Game state
+ ↓
+Win → Reward
+Lose → Penalty
+```
+
+*The agent learns a strategy through interaction.*
+
+---
+
+#### **Supervised vs Unsupervised**
+
+| Supervised                              | Unsupervised                    |
+| --------------------------------------- | ------------------------------- |
+| Uses labeled data                       | Uses data without target labels |
+| Has known target/output during training | Target isn't provided           |
+| Learns input → output relationship      | Finds patterns/structure        |
+| Classification                          | Clustering                      |
+| Regression                              | Dimensionality reduction        |
+| Example: churn prediction               | Example: customer segmentation  |
+
+---
+
+*At a high level, machine-learning problems can be supervised or unsupervised. In supervised learning, the model learns from labeled data and common tasks are classification and regression. In unsupervised learning, there is no predefined target and we try to discover structure, such as through clustering, dimensionality reduction, or anomaly detection. There are also approaches such as semi-supervised, self-supervised, and reinforcement learning.*
+
+---
+
+### **Real-World ML workflow**
 
