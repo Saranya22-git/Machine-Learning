@@ -11,6 +11,8 @@ Hey everybody!!!
     - [**Traditional Programming vs Machine Learning**](#traditional-programming-vs-machine-learning)
     - [**Where ML is actually used?**](#where-ml-is-actually-used)
     - [**Types of ML problems**](#types-of-ml-problems)
+      - [**Supervised Learning**](#supervised-learning)
+        - [**Classification**](#classification)
 
 # **ML and Data Foundations**
 
@@ -728,3 +730,94 @@ Perception
 ---
 
 ### **Types of ML problems**
+
+**What is an ML problem type?**
+
+*An ML problem type describes what the model is expected to learn and produce.*
+
+*For example ```"Will this customer leave?"``` The answer is ```Yes / No``` That's a classification problem.*
+
+*But ```"What will this house cost?"``` The answer is a numerical value ```₹75 lakh``` That's a regression problem.*
+
+---
+
+**Main Types**
+
+```txt
+Machine Learning Problems
+│
+├── Supervised Learning
+│     │
+│     ├── Classification
+│     └── Regression
+│
+└── Unsupervised Learning
+      │
+      ├── Clustering
+      ├── Dimensionality Reduction
+      └── Anomaly Detection
+```
+
+*There are also*
+
+```txt
+Semi-supervised Learning
+Self-supervised Learning
+Reinforcement Learning
+```
+
+---
+
+#### **Supervised Learning**
+
+*Supervised learning is a type of machine learning where the model learns from labeled training data, meaning the desired output is provided during training.*
+
+```txt
+Input + Correct Output
+        ↓
+      Model
+        ↓
+Learn relationship
+        ↓
+New Input
+        ↓
+Prediction
+```
+
+**Example:** *Suppose we have*
+
+| Hours Studied | Result |
+| ------------- | ------ |
+|             2 | Fail   |
+|             4 | Fail   |
+|             6 | Pass   |
+|             8 | Pass   |
+
+*The model sees both*
+
+```txt
+Input → Hours studied
+Output → Pass/Fail
+```
+
+*The output is already known in the training data. That's why it's called ```Supervised```*
+
+---
+
+**Two major Supervised Learning Problems**
+
+```txt
+Supervised Learning
+       │
+       ├── Classification
+       │
+       └── Regression
+```
+
+**Classification:** *Output is a category/class.*
+
+**Regression:** *Output is a numerical value.*
+
+---
+
+##### **Classification**
