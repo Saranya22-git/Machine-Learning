@@ -13,6 +13,7 @@ Hey everybody!!!
     - [**Types of ML problems**](#types-of-ml-problems)
       - [**Supervised Learning**](#supervised-learning)
         - [**Classification**](#classification)
+        - [**Regression**](#regression)
 
 # **ML and Data Foundations**
 
@@ -821,3 +822,78 @@ Supervised Learning
 ---
 
 ##### **Classification**
+
+*Classification is a supervised learning problem where the model predicts a discrete class or category.*
+
+**Examples:**
+
+```txt
+Spam / Not Spam
+Fraud / Legitimate
+Pass / Fail
+Disease / No Disease
+Churn / No Churn
+```
+
+*The output belongs to a category.*
+
+---
+
+**Example for Classification:** *Customer Churn*
+
+**Question:** *Will the customer leave?*
+
+**Possible output:** *Yes/No*
+
+```txt
+Customer Data
+     ↓
+ML Model
+     ↓
+Yes / No
+```
+
+---
+
+**Binary Classification:** *If there are two possible classes, it's called binary classification.*
+
+**Examples:**
+
+```txt
+Spam / Not Spam
+Yes / No
+Fraud / Not Fraud
+Churn / No Churn
+Pass / Fail
+```
+
+---
+
+**Multiclass Classification:** *What if there are more than two categories?*
+
+*For example*
+
+```txt
+Email category:
+    ↓
+Work
+Personal
+Promotion
+Social
+Spam
+```
+
+**Example:**
+
+```txt
+Image
+ ↓
+Cat / Dog / Horse
+```
+
+*There are multiple possible classes*
+
+---
+
+##### **Regression**
+
