@@ -1145,3 +1145,51 @@ Lose → Penalty
 
 ### **Real-World ML workflow**
 
+**What is an ML workflow?**
+
+*An ML workflow is the sequence of steps followed to take a real-world problem from*
+
+```txt
+Business Problem
+      ↓
+Data
+      ↓
+Model
+      ↓
+Evaluation
+      ↓
+Deployment
+      ↓
+Monitoring
+```
+
+---
+
+**Complete Real-World Workflow**
+
+```txt
+1. Define Business Problem
+          ↓
+2. Collect Data
+          ↓
+3. Understand / Explore Data
+          ↓
+4. Prepare Data
+          ↓
+5. Split Data
+          ↓
+6. Train Model
+          ↓
+7. Evaluate Model
+          ↓
+8. Improve / Select Model
+          ↓
+9. Deploy
+          ↓
+10. Monitor & Maintain
+```
+
+---
+
+**Step-1:** *Define the Business Problem*
+
