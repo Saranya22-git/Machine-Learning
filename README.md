@@ -9,6 +9,8 @@ Hey everybody!!!
     - [**Deep Learning**](#deep-learning)
     - [**AI vs ML vs DL**](#ai-vs-ml-vs-dl)
     - [**Traditional Programming vs Machine Learning**](#traditional-programming-vs-machine-learning)
+    - [**Where ML is actually used?**](#where-ml-is-actually-used)
+    - [**Types of ML problems**](#types-of-ml-problems)
 
 # **ML and Data Foundations**
 
@@ -464,8 +466,265 @@ Hours     Result
 
 ---
 
+### **Where ML is actually used?**
 
+**What kinds of problems are suitable for ML?**
 
+*ML is mainly useful when we have*
 
+```txt
+Data
+ ↓
+Patterns
+ ↓
+Prediction / Decision
+```
 
+*For example, "Based on a customer's past behavior, can we predict whether they will leave?"*
 
+---
+
+**Commom real-world ML applications**
+
+**Customer Churn Prediction** 
+
+**Business question:** *Which customers are likely to leave?*
+
+**Data might contain:**
+
+```txt
+Customer age
+Tenure
+Contract type
+Monthly charges
+Usage
+Support calls
+```
+
+*ML learn patterns from historical customers*
+
+```txt
+Customer Data
+     ↓
+ML Model
+     ↓
+Churn Probability
+```
+
+**Example:**
+
+```txt
+Customer A → 82% churn probability
+Customer B → 12% churn probability
+```
+
+---
+
+**Fraud Detection**
+
+**Question:** *Is this transaction potentially fraudulent?*
+
+*The model can learn from historical transactions*
+
+```txt
+Transaction
+    ↓
+ML Model
+    ↓
+Fraud Risk
+```
+
+**Potential Inputs:** *Transaction amount, Location, Time, Device, Transaction frequency, User behavior```*
+
+**Example:**
+
+```txt
+Normal transaction → Low fraud risk
+Unusual transaction → High fraud risk
+```
+
+---
+
+**Recommendation Systems**
+
+**Examples:** *Movies, Products, Music, Videos, News*
+
+**Question:** *What is this user likely to be interested in?*
+
+*For example*
+
+```txt
+Your previous activity
+        ↓
+ML model
+        ↓
+Learn preferences
+        ↓
+Recommendations
+```
+
+*If you repeatedly watch Python videos, a platform may recommend more programming-realted content.*
+
+---
+
+**Spam Detection**
+
+**Question:** *Is this email/message spam?*
+
+```txt
+Email
+ ↓
+ML Model
+ ↓
+Spam / Not Spam
+```
+
+---
+
+**Credit/Risk Prediction**
+
+*For example, "What is the likelihood that a borrower will default?"*
+
+**Possible data:**
+
+```txt
+Income
+Credit history
+Existing loans
+Repayment history
+Debt
+```
+
+*The model can estimate risk*
+
+```txt
+Applicant Data
+      ↓
+ML Model
+      ↓
+Risk Score / Probability
+```
+
+---
+
+**Demand Forecasting**
+
+**Business question:** *How much product might we need next week/month?*
+
+*For example*
+
+```txt
+Historical sales
+      ↓
+ML / forecasting model
+      ↓
+Expected future demand
+```
+
+*Business can use this for Inventory planning, Staffing, Supply chain, Producing planning.*
+
+---
+
+**Healthcare Prediction**
+
+**Examples:**
+- *Disease-risk prediction*
+- *Patient readmission prediction*
+- *Medical image analysis*
+- *Patient outcome prediction*
+
+*For example*
+
+```txt
+Patient information
+       ↓
+ML Model
+       ↓
+Risk prediction
+```
+
+---
+
+**Search and Ranking**
+
+*ML can help determine "Which results should appear higher for a particular query or user?"*
+
+```txt
+Search Query
+     ↓
+Candidate Results
+     ↓
+ML Ranking
+     ↓
+Ordered Results
+```
+
+---
+
+**Speech Recognition**
+
+```txt
+Voice
+ ↓
+ML / Deep Learning
+ ↓
+Text
+```
+
+*Used in Voice assistants, Transcription, Call-center systems, Accessibility tools.*
+
+---
+
+**Image Recognition**
+
+**Question:** *What is present in this image?*
+
+```txt
+Image
+ ↓
+ML / Deep Learning
+ ↓
+Prediction
+```
+
+**Examples:**
+
+- *Object detection*
+- *Face-related applications*
+- *Medical imaging*
+- *Quality inspection*
+
+---
+
+*Machine Learning is used for problems such as Customer churn prediction, fraud detection, recommendation systems, spam detection, demand forecasting, risk prediction, and image or speech recognition. In these cases, historical data can be used to learn patterns and make predictions or decisions for new cases.*
+
+---
+
+```txt
+Prediction
+├── Churn
+├── Fraud
+├── Risk
+├── Demand
+└── Healthcare outcomes
+
+Classification
+├── Spam
+├── Fraud / legitimate
+└── Image categories
+
+Recommendation
+├── Products
+├── Movies
+├── Music
+└── Content
+
+Perception
+├── Images
+├── Speech
+└── Video
+```
+
+---
+
+### **Types of ML problems**
