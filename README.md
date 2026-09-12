@@ -1,6 +1,14 @@
 Hey everybody!!!
 
-# [**Table of Contents**](#table-of-contents)
+# **Table of Contents**
+- [**Table of Contents**](#table-of-contents)
+- [**ML and Data Foundations**](#ml-and-data-foundations)
+  - [**Machine Learning**](#machine-learning)
+    - [**AI**](#ai)
+    - [**Machine Learning**](#machine-learning-1)
+    - [**Deep Learning**](#deep-learning)
+    - [**AI vs ML vs DL**](#ai-vs-ml-vs-dl)
+    - [**Traditional Programming vs Machine Learning**](#traditional-programming-vs-machine-learning)
 
 # **ML and Data Foundations**
 
