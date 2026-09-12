@@ -1193,3 +1193,21 @@ Monitoring
 
 **Step-1:** *Define the Business Problem*
 
+**Step-2:** *Collect data*
+
+**Step-3:** *Understand the Data*
+
+**Step-4:** *Prepare the data*
+
+**Step-5:** *Split the data*
+
+**Step-6:** *Train the model*
+
+**Step-7:** *Evaluate the Model*
+
+**Step-8:** *Improve / Select the Model*
+
+**Step-9:** *Deploy the model*
+
+**Step-10:** *Monitor the model*
+
