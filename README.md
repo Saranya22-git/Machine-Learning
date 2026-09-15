@@ -1272,6 +1272,8 @@ Monitoring
      Churn → target
      ```
 
+---
+
 - **Step-4:** *Prepare the data*
 
      *Real-world data is rarely ready to directly feed into a model. You may encounter*
@@ -1301,13 +1303,105 @@ Monitoring
      Clean dataset
      ```
 
-**Step-5:** *Split the data*
+---
 
-**Step-6:** *Train the model*
+- **Step-5:** *Split the data*
 
-**Step-7:** *Evaluate the Model*
+     *We generally don't want to train and evaluate on exactly the same data. Because we want to know "Can the model perform well on data it hasn't seen during training?". So we typically divide data into subsets such as*
 
-**Step-8:** *Improve / Select the Model*
+     ```txt
+     Dataset
+     │
+     ├── Training Data
+     ├── Validation Data
+     └── Test Data
+     ```
+
+     **Training Data:** *Used to train the model*
+
+     **Validation Data:** *Used during model selection/tuning*
+
+     **Test Data:** *Used for final evaluation*
+
+     *We need unseen data to assess how well the model generalizes.*
+
+---
+
+- **Step-6:** *Train the model*
+
+     *Now we select an appropriate algorithm. For example*
+
+     ```txt
+     Classification problem
+          ↓
+     Possible models
+     ├── Logistic Regression
+     ├── Decision Tree
+     ├── Random Forest
+     └── Gradient Boosting
+     ```
+
+     *We train the model using the training data*
+
+     ```txt
+     Training Data
+          ↓
+     Algorithm
+          ↓
+     Training
+          ↓
+     Trained Model
+     ```
+
+     *The model learns parameters from the training data*
+
+---
+
+- **Step-7:** *Evaluate the Model*
+
+     *This is where we ask "How good is the model?". Suppose our model predicts churn. We can't simply say "It looks good". We need appropraite evaluation metrics.*
+
+     *For classification, examples include*
+     - *Accuracy*
+     - *Precision*
+     - *Recall*
+     - *F1-score*
+     - *ROC-AUC*
+
+     *For regression*
+     - *MAE*
+     - *MSE*
+     - *RMSE*
+     - *R²*
+
+     *The metric should match the business problem*
+
+---
+
+- **Step-8:** *Improve / Select the Model*
+
+     *Suppose we test*
+
+     ```txt
+     Logistic Regression → 0.82 AUC
+     Random Forest      → 0.87 AUC
+     Gradient Boosting  → 0.90 AUC
+     ```
+
+     *We don't simply choose the largest number blindly*
+
+     *We consider*
+     - *Performance*
+     - *Interpretability*
+     - *Training cost*
+     - *Prediction speed*
+     - *Data requirements*
+     - *Business requirements*
+     - *Deployment constraints*
+
+     *Then select a model that best fits the overall requirements*
+
+---
 
 **Step-9:** *Deploy the model*
 
