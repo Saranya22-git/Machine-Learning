@@ -1191,13 +1191,115 @@ Monitoring
 
 ---
 
-**Step-1:** *Define the Business Problem*
+- **Step-1:** *Define the Business Problem*
 
-**Step-2:** *Collect data*
+     *Suppose a company says "Our customers are leaving". That's a business problem. You need to translate it into an ML problem: "Can we predict which customers are likely to churn?"*
 
-**Step-3:** *Understand the Data*
+     ```txt
+     Business Problem
+          ↓
+     ML Objective
+          ↓
+     Target
+          ↓
+     Features
+          ↓
+     Prediction
+     ```
 
-**Step-4:** *Prepare the data*
+     *For example*
+
+     ```txt
+     Business objective: Reduce customer churn
+
+     ML objective: Predict customers likely to churn
+
+     Target:Churn / No Churn
+     ```
+
+---
+
+- **Step-2:** *Collect data*
+
+     *Once we know what we're trying to predict, we need relevant data. For churn prediction we night collect*
+
+     ```txt
+     Customer ID
+     Age
+     Tenure
+     Contract
+     Monthly Charges
+     Usage
+     Support Calls
+     Payment History
+     Churn
+     ```
+
+     *Data can come from different sources*
+     - *Databases*
+     - *APIs*
+     - *Application logs*
+     - *Business systems*
+     - *Files*
+     - *Sensors*
+     - *Existing datasets*
+
+     *The important question is "Do we have data that contains information useful for solving the problem?"*
+
+---
+
+- **Step-3:** *Understand the Data*
+
+     *Don't immediately train a model. First understand what you've collected. Ask*
+
+     ```txt
+     How many rows?
+     How many columns?
+     What does each column mean?
+     Which column is the target?
+     Are values missing?
+     Are there incorrect values?
+     Are there categorical variables?
+     Are there unusual values?
+     ```
+
+     *For example*
+
+     ```txt
+     Age → numerical
+     Monthly Charges → numerical
+     Contract → categorical
+     Churn → target
+     ```
+
+- **Step-4:** *Prepare the data*
+
+     *Real-world data is rarely ready to directly feed into a model. You may encounter*
+
+     ```txt
+     Missing values
+     Incorrect values
+     Duplicate records
+     Outliers
+     Categorical variables
+     Different scales
+     ```
+
+     *So we may need to perform preprocessing*
+
+     *For example*
+
+     ```txt
+     Raw Data
+     ↓
+     Handle missing values
+     ↓
+     Handle categorical data
+     ↓
+     Scale / transform when appropriate
+     ↓
+     Clean dataset
+     ```
 
 **Step-5:** *Split the data*
 
