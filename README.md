@@ -1403,7 +1403,123 @@ Monitoring
 
 ---
 
-**Step-9:** *Deploy the model*
+- **Step-9:** *Deploy the model*
 
-**Step-10:** *Monitor the model*
+     *A trained model sitting inside a notebook isn't necessarily useful to the business. We need to make it available to an application or system.*
+
+     *For example*
+
+     ```txt
+     User / Application
+          ↓
+          API
+          ↓
+     ML Model
+          ↓
+     Prediction
+     ```
+
+     **Example:**
+
+     ```txt
+     Customer data
+          ↓
+     API
+          ↓
+     Churn model
+          ↓
+     82% churn probability
+     ```
+
+     *This is where topics such as*
+     - *Flask/FastAPI*
+     - *Docker*
+     - *Cloud*
+     - *Model serving*
+
+     *can become relevant*
+
+---
+
+- **Step-10:** *Monitor the model*
+
+     *You deploy the model today. Does that mean you're finished? ```No``` Real-world data can change*
+
+     *For example*
+
+     ```txt
+     Training data
+          ↓
+     2025 customer behavior
+     ```
+
+     *But after deployment ```2026 customer behavior``` may be different*
+
+     *The model may become less accurate. So we need monitoring*
+
+     *Things we may monitor include*
+     - *Prediction performance*
+     - *Data quality*
+     - *Input distributions*
+     - *Model latency*
+     - *Errors*
+     - *Data drift*
+     - *Model drift*
+
+---
+
+**Real-World Example - Complete Workflow**
+
+*A telecom company wants to reduce customer churn*
+
+- **Step-1:** *Business problem ```Customers are leaving.```*
+- **Step-2:** *ML problem ```Predict customers likely to churn.```*
+- **Step-3:** *Data*
+     ```txt
+     Customer history
+          ↓
+     Usage
+     Contract
+     Charges
+     Support interactions
+     Churn history
+     ```
+- **Step-4:** *EDA*
+     *Understand*
+     ```txt
+     Missing values
+     Distributions
+     Relationships
+     Class balance
+     ```
+- **Step-5:** *Preprocessing*
+     ```txt
+     Clean data
+     Encode categories
+     Handle missing values
+     etc.
+     ```
+- **Step-6:** *Split ```Train / Validation / Test```*
+- **Step-7:** *Train*
+     *Try suitable models*
+     ```txt
+     Logistic Regression
+     Random Forest
+     Gradient Boosting
+     ```
+- **Step-8:** *Evaluate ```Use appropriate classification metrics*
+- **Step-9:** *Select ```Choose the model based on both performance and practical requirements*
+- **Step-10:** *Deploy ```Application → API → Model → Prediction```*
+- **Step-11:** *Monitor*
+     ```txt
+     Production Data
+          ↓
+     Monitor performance
+          ↓
+     Detect changes
+          ↓
+     Retrain / update if necessary
+     ```
+
+---
 
