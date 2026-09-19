@@ -16,14 +16,6 @@
 - When should you use ML?
 - When should you NOT use ML?
 
-### 🎯 Interview Focus
-
-- What is Machine Learning?
-- How is ML different from traditional programming?
-- How do you decide whether a problem needs ML?
-- Give real-world examples of ML.
-- What types of problems can ML solve?
-
 ---
 
 ## 0.2 ML Terminology

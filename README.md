@@ -23,6 +23,8 @@ Hey everybody!!!
       - [**Reinforcement Learning**](#reinforcement-learning)
       - [**Supervised vs Unsupervised**](#supervised-vs-unsupervised)
     - [**Real-World ML workflow**](#real-world-ml-workflow)
+    - [**When should you use ML?**](#when-should-you-use-ml)
+    - [**When should you NOT use ML?**](#when-should-you-not-use-ml)
 
 # **ML and Data Foundations**
 
@@ -1522,4 +1524,250 @@ Monitoring
      ```
 
 ---
+
+**ML Workflow is NOT Linear Forever**
+
+*The diagram looks like*
+
+```txt
+Problem
+ ↓
+Data
+ ↓
+Model
+ ↓
+Deploy
+```
+
+*But in reality, you'll often go backward*
+
+*For example*
+
+```txt
+Train Model
+    ↓
+Poor performance
+    ↓
+Investigate data
+    ↓
+Improve preprocessing/features
+    ↓
+Train again
+```
+
+*So it's more like*
+
+```txt
+        ┌──────────────┐
+        ↓              │
+Data → Train → Evaluate
+        ↑              │
+        └── Improve ←──┘
+```
+
+*ML development is usually iterative*
+
+---
+
+**What are the steps in an ML project?**
+
+*First, I would understand and define the business problem and translate it into an ML objective. Then I would collect and understand the relevant data, perform EDA and preprocessing, split the data appropriately, train candidate models, evaluate them using metrics relevant to the business problem, select and tune the best suitable model, deploy it, and finally monitor its performance in production.*
+
+---
+
+### **When should you use ML?**
+
+*Don't start with "Can ML solve this?". Start with "Does this problem actually need ML?"*
+
+*A good ML use case generally has*
+
+```txt
+A meaningful prediction/decision problem
+                +
+Relevant historical data
+                +
+Patterns that are difficult to write as fixed rules
+                +
+Enough business value to justify ML
+```
+
+---
+
+**Condition 1 - There is a Prediction or Decision Problem**
+
+*ML is useful when we want the system to predict something or make a data-driven decision.*
+
+**Examples:** 
+
+- *Customer Churn - Which customers are likely to leave?*
+
+     ```txt
+     Customer data
+          ↓
+     ML
+          ↓
+     Churn prediction
+     ```
+
+- *House Price - What will this house likely sell for?*
+
+     ```txt
+     House information
+          ↓
+     ML
+          ↓
+     Predicted price
+     ```
+
+- *Fraud - Is this transaction potentially fraudulent?*
+
+```txt
+Transaction data
+      ↓
+ML
+      ↓
+Fraud risk
+```
+
+*These are natural ML problems*
+
+---
+
+**Condition 2 - You have Relevant Data**
+
+*Suppose a company says "We want to predict which customers will churn". You should ask "Do we have historical customer data?"*
+
+*For example*
+
+```txt
+Customer history
+     ↓
+Past behavior
+     ↓
+Past churn outcomes
+```
+
+*If we have useful historical examples, ML has something to learn from*
+
+---
+
+**What if there is no useful data?**
+
+- *Suppose "We launched a completely new product yesterday and have no historical customer behavior".* 
+- *It may be difficult to train a useful supervised model for that specific prediction because there may not be enough relevant historical data*
+- *So having a problem that sounds like ML does not automatically mean you can successfully use ML*
+- *Data availability matters*
+
+---
+
+**Condition 3 - There are Patterns we cannot easily write as Rules**
+
+*Consider Calculate GST. The rules/formula are known*
+
+```txt
+Known formula
+     ↓
+Traditional Program
+```
+
+*No need for ML*
+
+*Now consider Detect spam emails. There can be huge numbers of different patterns*
+
+```txt
+Emails
+  ↓
+Complex patterns
+  ↓
+ML
+```
+
+*Manually writing every possible spam rule would be difficult.*
+
+---
+
+**Condition 4 - The Pattern is Learnable from Data**
+
+*Having data isn't enough. The data needs to contain useful information related to the target.*
+
+*Suppose you want to predict "Will this customer churn?"*
+
+*But your dataset contains only*
+
+```txt
+Customer ID
+Name
+Favorite color
+```
+
+*There may not be useful predictive information*
+
+*So*
+
+```txt
+Data available
+      ≠
+Useful data available
+```
+
+*You need features that contain meaningful signals for the prediction task*
+
+---
+
+**Condition 5 - ML provides enough value**
+
+*ML introduces additional complexity*
+
+*You may need*
+- *Data pipelines*
+- *Model training*
+- *Evaluation*
+- *Deployment*
+- *Monitoring*
+- *Retraining*
+
+*So ask "Is the benefit of using ML worth the additional complexity?"*
+
+*Suppose a simple rule gives exactly the required result*
+
+```txt
+IF balance < 0 → Send alert
+```
+
+*Building a neural network for this would be unnecessary*
+
+---
+
+**ML vs Rule-Based System**
+
+*Use tarditional programming when*
+
+```txt
+Rules are known
+      +
+Rules are stable
+      +
+Exact behavior is required
+```
+
+**Example:** *Tax calculation, Eligibility rule, Billing formula, Password validation*
+
+*Consider ML when*
+
+```txt
+Patterns are complex
+      +
+Relevant data exists
+      +
+Prediction is needed
+      +
+Rules are difficult to manually define
+```
+
+**Example:** *Fraud detection, Churn prediction, Recommendation, Spam detection, Image classification*
+
+---
+
+### **When should you NOT use ML?**
+
 
