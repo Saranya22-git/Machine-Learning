@@ -1799,4 +1799,114 @@ Rules are difficult to manually define
 
      *There may not be enough information for a useful data-driven model*
 
-4. **
+4. *When the Data doesn't contain useful signals*
+
+     *Suppose you want to predict "Will this customer churn?" But your dataset contains only*
+
+     ```txt
+     Customer ID
+     Name
+     Favorite Color
+     ```
+
+     *Even if you have ```10 million customers``` those columns may not provide meaningful information for churn prediction*
+
+     *So more data does not automatically mean better ML. The data needs relevant predictive information*
+
+5. *When the Problem requires exact deterministic behavior*
+
+     *Suppose a banking system has a rule*
+
+     ```txt
+     If account balance < ₹0
+     → Account is overdrawn
+     ```
+
+     *The system should behave predictably. You don't want*
+
+     ```txt
+     Model says: "Probably overdrawn: 96%"
+     ```
+
+     *When the rule is already exact. Use deterministic programming*
+
+6. *When ML adds unnecessary complexity*
+
+     *Imagine a company wants ```Convert Celsius to Fahrenheit```*
+
+     **Formula:** *```F = (C × 9/5) + 32```*
+
+     *You could train a model. But why?*
+
+     ```txt
+     Formula
+     ↓
+     Exact answer
+     ```
+
+     *is much simpler than*
+
+     ```txt
+     Collect data
+     ↓
+     Train model
+     ↓
+     Evaluate
+     ↓
+     Deploy
+     ↓
+     Monitor
+     ↓
+     Maintain
+     ```
+
+     *Don't use ML when a simpler solution already solves the problem reliably*
+
+7. *When the cost of ML isn't justified*
+
+     *ML systems have costs*
+     - *Data collection*
+     - *Data storage*
+     - *Training*
+     - *Infrastructure*
+     - *Deployment*
+     - *Monitoring*
+     - *Maintenance*
+     - *Retraining*
+
+     *If the business benefit is tiny, building an ML system may not be worthwhile*
+
+     *For example, A company needs to automatically classify only 20 records per month using a simple rule. A complicated ML pipeline would probably be unnecessary*
+
+8. *When Explainability is critical and a simple rule works*
+
+     *Sometimes the business requires highly understandable decisions*
+
+     *Suppose*
+
+     ```txt
+     IF age >= 18
+     AND required document = present
+     → Eligible
+     ```
+
+     *The decision is immediately understandable. If an ML model isn't needed to solve the problem, using a complex model could make the system harder to explain*
+
+     *This doesn't mean ML can never be used where explainability matters. It means that if a simple transparent approach already meets the requirement it may be preferable.*
+
+9.  *When the Problem is better solved by another method*
+
+     *Not every data problem is necessarily an ML problem. Depending on the problem other approaches may be better*
+
+     ```txt
+     Known formula       → Traditional programming
+     Database lookup     → SQL / database query
+     Business rule       → Rule-based system
+     Optimization        → Optimization algorithms
+     Simple statistics   → Statistical method
+     ML needed           → Machine learning
+     ```
+
+     *The goal isn't "Use ML". The goal is "Choose the appropriate solution"*
+
+---
