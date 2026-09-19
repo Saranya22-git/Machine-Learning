@@ -1770,4 +1770,33 @@ Rules are difficult to manually define
 
 ### **When should you NOT use ML?**
 
+1. *Use a simple rule when the rule is already known*
 
+     *Suppose If the customer's balance is below ₹0 send an alert. The rule is already known*
+
+     ```txt
+     IF balance < 0
+          ↓
+     Send Alert
+     ```
+
+     *There is nothing to learn. Use Traditional Programming*
+
+2. *Use a formula when the relationship is known*
+
+     *Suppose you need to calculate simple interest ```SI = P × R × T / 100``` There is no reason to train an ML model. Use a normal program*
+
+
+3. *When there is no useful data*
+
+     *Suppose a company asks "Predict which customers will buy our new product". But the company has*
+
+     ```txt
+     No historical customer data
+     No previous purchases
+     No relevant behavior data
+     ```
+
+     *There may not be enough information for a useful data-driven model*
+
+4. **
