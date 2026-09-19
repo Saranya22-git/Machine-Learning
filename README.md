@@ -28,6 +28,7 @@ Hey everybody!!!
   - [**ML Terminology**](#ml-terminology)
     - [**Dataset**](#dataset)
     - [**Feature**](#feature)
+    - [\*\*\*\*](#)
 
 # **ML and Data Foundations**
 
@@ -2094,7 +2095,194 @@ Available Dataset
 
 ### **Feature**
 
-**
+*A feature is an input variable or characteristic used by a machine-learning model to make a prediction*
 
+**Example:** *Suppose we want to predict house price. Our data is*
 
+| Area | Bedrooms | Age | Location  | Price |
+| ---- | -------- | --- | --------- | ----- |
+| 1000 |        2 |  10 | Hyderabad |   50L |
+| 1500 |        3 |   5 | Hyderabad |   70L |
+| 2000 |        3 |   3 | Hyderabad |   90L |
 
+*Here*
+
+```txt
+Area
+Bedrooms
+Age
+Location
+```
+
+*are **features***
+
+*Because they are the information we give to the model to help predict ```Price```*
+
+---
+
+**Feature vs Target**
+
+*Suppose*
+
+| Age | Income | Tenure | Churn |
+| --- | ------ | ------ | ----- |
+|  25 |    30K |      2 | Yes   |
+|  40 |    60K |      5 | No    |
+|  32 |    45K |      1 | Yes   |
+
+*If our goal is to predict Churn*
+
+```txt
+Features:
+Age
+Income
+Tenure
+
+Target:
+Churn
+```
+
+```txt
+FEATURES
+   ↓
+   Model
+   ↓
+ TARGET
+```
+
+*Features are Inputs and the Target is what we're trying to predict*
+
+---
+
+**Features can be different types**
+
+*A feature doesn't have to be a number*
+
+- **Numerical feature**
+
+     ```txt
+     Age = 25
+     Income = ₹50,000
+     Tenure = 3 years
+     ```
+
+- **Categorical feature**
+
+     ```txt
+     Contract = Monthly
+     City = Hyderabad
+     Gender = Female
+     ```
+
+- **Boolean feature**
+
+     ```txt
+     Has_Premium = True
+     ```
+
+- **Text**
+
+     ```txt
+     Review = "The service was excellent"
+     ```
+
+- **Image:** *An image itself can be input data/features depending on the ML setup.*
+
+---
+
+**Feature in a Table**
+
+*Suppose*
+
+| Age | Income | Experience | Purchased |
+| --- | ------ | ---------- | --------- |
+|  21 |  30000 |          0 | No        |
+|  25 |  45000 |          2 | Yes       |
+|  30 |  70000 |          5 | Yes       |
+
+*We can represent it as*
+
+```txt
+Features (X)
+        ↓
+Age
+Income
+Experience
+
+Target (y)
+        ↓
+Purchased
+```
+
+*In ML notation, you'll often see*
+
+```txt
+X = features
+y = target
+```
+
+---
+
+**What makes a Good Feature?**
+
+*A useful feature should generally*
+- *Contain information relevant to the target*
+- *Be available at prediction time*
+- *Be reasonable reliable*
+- *Not leak the answer from the future or target itself*
+
+---
+
+**Feature Leakage**
+
+*Suppose we're predicting "Will a customer churn next month?"*
+
+*We use*
+
+```txt
+Age
+Tenure
+Monthly Charges
+```
+
+*These can potentially be available before the prediction*
+
+*But suppose we use ```Cancellation Date```*
+
+*If the cancellation date is recorded after the customer has already decided/started the churn process, it can reveal the answer. That's a form of data leakage*
+
+---
+
+**Feature Engineering**
+
+*Sometimes raw features aren't the most useful representation*
+
+*For example ```Date of Birth``` might be transformed into ```Age``` or ```Purchase Date``` could be transformed into ```Days Since Last Purchase```*
+
+*Creating or transforming useful input variables is called **Feature Engineering***
+
+---
+
+**Feature Selection**
+
+*Choosing which available features should be used by the model*
+
+*Suppose you have ```100 features``` but only 20 are useful*
+
+*You may select a subset*
+
+```txt
+100 Features
+     ↓
+Feature Selection
+     ↓
+20 Useful Features
+     ↓
+Model
+```
+
+*This can help simplify the model and sometimes improve performance*
+
+---
+
+### ****
