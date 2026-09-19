@@ -25,6 +25,9 @@ Hey everybody!!!
     - [**Real-World ML workflow**](#real-world-ml-workflow)
     - [**When should you use ML?**](#when-should-you-use-ml)
     - [**When should you NOT use ML?**](#when-should-you-not-use-ml)
+  - [**ML Terminology**](#ml-terminology)
+    - [**Dataset**](#dataset)
+    - [**Feature**](#feature)
 
 # **ML and Data Foundations**
 
@@ -1910,3 +1913,188 @@ Rules are difficult to manually define
      *The goal isn't "Use ML". The goal is "Choose the appropriate solution"*
 
 ---
+
+```txt
+                Problem
+                   ↓
+          Is the rule already known?
+              /            \
+            YES             NO
+             ↓               ↓
+       Traditional       Is there useful
+       Programming            data?
+                           /        \
+                         NO          YES
+                         ↓             ↓
+                  ML may not      Can simple
+                  be suitable      rules solve it?
+                                  /          \
+                                YES           NO
+                                 ↓             ↓
+                           Use simpler      Consider ML
+                           solution
+```
+
+---
+
+## **ML Terminology**
+
+### **Dataset**
+
+*A dataset is a collection of data used to analyze a problem or train and evaluate a machine-learning model.*
+
+**Example:** *Suppose we want to predict house prices. Our dataset might look like*
+
+| Area | Bedrooms | Location  |  Price |
+| ---- | -------- | --------- | ------ |
+| 1000 |        2 | Hyderabad |   ₹50L |
+| 1500 |        3 | Hyderabad |   ₹70L |
+| 2000 |        3 | Hyderabad |   ₹90L |
+| 2500 |        4 | Hyderabad | ₹1.2Cr |
+
+*The entire table is the **Dataset**.*
+
+---
+
+**Dataset = Collection of Examples**
+
+*A dataset isn't necessarily a table. It depends on the type of problem.*
+
+- **Tabular data:** *```Rows + Columns```*
+
+     **Examples:** *```Customer | Age | Income | Churn```*
+
+- **Image dataset**
+
+     ```txt
+     Image 1
+     Image 2
+     Image 3
+     ...
+     ```
+
+- **Text dataset**
+
+     ```txt
+     Text 1
+     Text 2
+     Text 3
+     ...
+     ```
+
+- **Audio dataset**
+
+     ```txt
+     Audio recording 1
+     Audio recording 2
+     ...
+     ```
+
+*Dataset always means Excel table. A dataset can contain many types of data.*
+
+---
+
+**Dataset in an ML project**
+
+*Suppose we're building a churn prediction model. Our dataset might contain*
+
+| Age | Tenure | Monthly Charges | Contract | Churn |
+| --- | ------ | --------------- | -------- | ----- |
+|  25 |      2 |             800 | Monthly  | Yes   |
+|  42 |      5 |            1200 | Yearly   | No    |
+|  31 |      1 |             900 | Monthly  | Yes   |
+
+*This dataset contains examples of customers and their historical outcomes. We can use it to train a supervised ML model.*
+
+---
+
+**Dataset vs Database**
+
+**Database:** *A database is a system used to store and manage data.*
+
+**Example:**
+
+```txt
+Customer Database
+       ↓
+Millions of records
+```
+
+**Dataset:** *A dataset is a collection of data used for a particular analysis or ML task.*
+
+*For example, we might extract*
+
+```txt
+Database
+   ↓
+Select relevant records/columns
+   ↓
+ML Dataset
+```
+
+---
+
+**Dataset vs Data Point**
+
+*Suppose*
+
+| Age | Income | Churn |
+| --- | ------ | ----- |
+|  25 |  30000 | Yes   |
+|  30 |  50000 | No    |
+|  42 |  70000 | No    |
+
+- *The entire table is the **Dataset***
+- *One individual row is one **Observation/Instance***
+
+```txt
+Dataset
+│
+├── Observation 1
+├── Observation 2
+├── Observation 3
+└── ...
+```
+
+---
+
+**Why do we need a Dataset?**
+
+*Because an ML model needs examples from which it can learn patterns*
+
+```txt
+Dataset
+   ↓
+Learning algorithm
+   ↓
+Model
+   ↓
+Predictions
+```
+
+*Without relevant data, a data-driven ML model generally has nothing useful from which to learn*
+
+---
+
+**Training Dataset vs Entire Dataset**
+
+*People sometimes casually say "The dataset is used to train the model". But in a proper ML workflow, the available data may be divided into*
+
+```txt
+Available Dataset
+       │
+       ├── Training Data
+       ├── Validation Data
+       └── Test Data
+```
+
+*So the training data is only one part of the overall data used in the ML workflow*
+
+---
+
+### **Feature**
+
+**
+
+
+
