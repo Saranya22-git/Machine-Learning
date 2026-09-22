@@ -31,6 +31,10 @@ Hey everybody!!!
     - [**Target / Label**](#target--label)
     - [**Observation / Instance**](#observation--instance)
     - [**Training / Validation / Test Data**](#training--validation--test-data)
+      - [**Training Data**](#training-data)
+      - [**Validation Data**](#validation-data)
+      - [**Test Data**](#test-data)
+    - [**Model**](#model)
 
 # **ML and Data Foundations**
 
@@ -2549,6 +2553,165 @@ Churn                → Target
 ---
 
 ### **Training / Validation / Test Data**
+
+*When building an ML model, we usually don't use all the available data for training. We divide the dataset into different parts so we can train the model and honestly evaluate how it performs on unseen data.*
+
+*The three main parts are*
+
+```txt
+Dataset
+   │
+   ├── Training Data
+   ├── Validation Data
+   └── Test Data
+```
+
+---
+
+#### **Training Data**
+
+- *Training data is the data used to teach the model*
+- *The model looks at ```Features → Target``` and learns patterns/parameters from them*
+
+**Example:**
+
+```txt
+Age = 25
+Income = 40,000
+Tenure = 12
+Churn = No
+```
+
+*The model uses many such examples to learn how the input features relate to the target.*
+
+*Training data is the portion of the dataset used to train the model and learn its parameters.*
+
+---
+
+#### **Validation Data**
+
+*Validation data is used to evaluate and improve model choices during development.*
+
+*For example, suppose you're comparing*
+
+```txt
+Model A → Logistic Regression
+Model B → Decision Tree
+Model C → Random Forest
+```
+
+*You train them using the training data and use validation data to help decide which setup works better.*
+
+*Validation data can also be used for*
+- *Hyperparameter tuning*
+- *Model selection*
+- *Comparing different approaches*
+
+*Validation data is used during model development to compare models, tune hyperparameters, and make decisions without using the final test set.*
+
+---
+
+#### **Test Data**
+
+*Test data is used for the final evaluation of the selected model.*
+
+*Suppose after development you selected Random Forest. You then evaluate the final model on the test set ```Test Data → Final Performance``` This gives you an estimate of how the model may perform on unseen real-world data.*
+
+*Test data is a held-out dataset used for the final evaluation of a trained and selected model on unseen data.*
+
+---
+
+**Why do we need Three sets?**
+
+*Imagine you train a model and evaluate it on exactly the same data. The model has already seen those examples. So getting ```Training accuracy = 98%``` doesn't necessarily mean the model will perform well on new customers.*
+
+*That's why we need unseen data*
+
+```txt
+Training Data
+      ↓
+Train Model
+      ↓
+Validation Data
+      ↓
+Choose / Tune Model
+      ↓
+Final Model
+      ↓
+Test Data
+      ↓
+Final Evaluation
+```
+
+---
+
+**Simple Real-World Example**
+
+*Suppose you have 10,000 customer records. You could divide them approximately as*
+
+```txt
+Training   → 7,000
+Validation → 1,500
+Test       → 1,500
+```
+
+- **Training:** *The model learns from the 7000 records*
+- **Validation:** *You use 1500 records to make development decisions*
+- **Test:** *You use the final 1500 records only for final evaluation*
+
+*The exact percentages are not fixed rules. The appropriate split depends on the dataset and problem.*
+
+---
+
+**What if we don't have enough data?**
+
+*Sometimes the dataset is small. Instead of keeping a separate validation set, we can use cross-validation on the training data.*
+
+*For example*
+
+```txt
+Training Data
+      ↓
+Cross-Validation
+      ↓
+Model / Hyperparameter Selection
+      ↓
+Test Data
+      ↓
+Final Evaluation
+```
+
+---
+
+**Don't confuse Training and Test data**
+
+**Training data:** *The model learns from these examples*
+
+```txt
+House A → ₹50L
+House B → ₹70L
+House C → ₹90L
+```
+
+**Test data:** *The model doesn't get the actual price while making its prediction*
+
+```txt
+House X → actual price ₹80L
+```
+
+*Then we compare*
+
+```txt
+Actual     = ₹80L
+Predicted  = ₹78L
+```
+
+*to calculate the appropriate evaluation metric*
+
+---
+
+### **Model**
+
 
 
 
