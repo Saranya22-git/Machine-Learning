@@ -2712,6 +2712,84 @@ Predicted  = ₹78L
 
 ### **Model**
 
+*A model is the learned mathematical/computational representation that uses input features to produce predictions or decisions.*
+
+*OR*
+
+*The model is what we get after an ML algorithm learns patterns from training data*
+
+---
+
+**Example:** *Suppose we want to predict customer churn*
+
+*Our features are*
+
+```txt
+Age
+Tenure
+Monthly Charges
+Support Calls
+```
+
+*Target*
+
+```txt
+Churn
+```
+
+*We give training data to an ML algorithm*
+
+```txt
+Training Data
+     ↓
+ML Algorithm
+     ↓
+Learned Model
+     ↓
+New Customer Data
+     ↓
+Prediction
+```
+
+*The resulting model can take a new customer's information and predict ```Churn = Yes```*
+
+---
+
+**Algorithm vs Model**
+
+**Algorithm:** *The algorithm is the method/procedure used to learn from data.*
+
+**Examples:**
+- *Linear Regression*
+- *Logistic Regression*
+- *Decision Tree*
+- *Random Forest*
+- *KNN*
+- *SVM*
+
+**Model:** *The model is the learned result after applying the algorithm to training data.*
+
+```txt
+Algorithm + Training Data
+          ↓
+       Learning
+          ↓
+      Trained Model
+```
+
+---
+
+**Example with Linear Regression**
+
+- *Suppose we want to predict salary from years of experience. A linear regression model might learn a relationship such as ```Salary = 3 × Experience + 5``` The numbers in the model are learned from the training data*
+- *If ```Experience = 5``` the model can produce a prediction. The exact values are not manually written by us, they are learned during training*
+
+---
+
+**What does a Model actually Learn?**
+
+- *A model learns parameters from the training data.* 
+- *For example, in a simple linear model ```*
 
 
 
