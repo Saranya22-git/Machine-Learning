@@ -2789,7 +2789,74 @@ Algorithm + Training Data
 **What does a Model actually Learn?**
 
 - *A model learns parameters from the training data.* 
-- *For example, in a simple linear model ```*
+- *For example, in a simple linear model ```y = wx + b``` the model learns*
+     ```txt
+     w → weight/coefficient
+     b → intercept/bias
+     ```
+*These are parameters*
 
+---
 
+**Model during Prediction**
+
+*Once training is complete*
+
+```txt
+Trained Model
+      ↓
+New Input
+      ↓
+Prediction
+```
+
+**Example:**
+
+```txt
+Age = 30
+Tenure = 8
+Monthly Charges = ₹999
+Support Calls = 5
+```
+
+*The trained churn model might output ```Predicted Churn = Yes```*
+
+*The process of using a trained model to make predictions on new data is called **Inference***
+
+---
+
+**Model is not the same as Dataset**
+
+**Dataset:** *Contains examples*
+
+```txt
+Customer 1
+Customer 2
+Customer 3
+...
+```
+
+**Model:** *Contains the learned representation/patterns used to make predictions*
+
+```txt
+Dataset
+   ↓
+Training
+   ↓
+Model
+```
+
+---
+
+**Model is not the same as Algorithm**
+
+*Suppose you use Decision Tree*
+
+```txt
+Decision Tree algorithm
+        ↓
+Training data
+        ↓
+Trained Decision Tree model
+```
 
