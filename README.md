@@ -29,6 +29,7 @@ Hey everybody!!!
     - [**Dataset**](#dataset)
     - [**Feature**](#feature)
     - [**Target / Label**](#target--label)
+    - [**Observation / Instance**](#observation--instance)
 
 # **ML and Data Foundations**
 
@@ -2287,6 +2288,184 @@ Model
 
 ### **Target / Label**
 
+**What is a Target?**
 
+*The target is the output that a machine-learning model is trying to predict.*
+
+**Examples:** *Customer Churn*
+
+*Suppose we have*
+
+| Age | Tenure | Monthly Charges | Support Calls | Churn |
+| --- | ------ | --------------- | ------------- | ----- |
+|  25 |     12 |             799 |             2 | No    |
+|  42 |      3 |            1299 |             8 | Yes   |
+|  31 |     24 |             599 |             1 | No    |
+
+*Here*
+- **Features:** *Age, Tenure, Monthly Charges, Support Calls*
+- **Target:** *Churn*
+
+*The model learns from existing examples and tries to predict "Will this customer churn?"*
+
+---
+
+**Target in Classification**
+
+*When the target is a category, it is a classification problem*
+
+**Examples:**
+
+| Problem              | Target               |
+| -------------------- | -------------------- |
+| Spam detection       | Spam / Not Spam      |
+| Customer churn       | Yes / No             |
+| Loan approval        | Approved / Rejected  |
+| Disease prediction   | Disease / No Disease |
+| Image classification | Cat / Dog            |
+
+---
+
+**Target in Regression**
+
+*When the target is a numerical value, it is usually a regression problem*
+
+**Examples:** *House price prediction*
+
+| Area | Bedrooms | Location  | Price |
+| ---- | -------- | --------- | ----- |
+| 1200 |        2 | Hyderabad |  65 L |
+| 1800 |        3 | Hyderabad |  95 L |
+| 2500 |        4 | Hyderabad | 140 L |
+
+---
+
+**Target vs Feature**
+
+*Suppose*
+
+```txt
+Age
+Salary
+Experience
+Education
+Job_Change
+```
+
+*If our problem is "Predict whether a person will change jobs" then*
+
+```txt
+Features → Age, Salary, Experience, Education
+Target   → Job_Change
+```
+
+*But if our problem changes to "Predict the person's salary" then*
+
+```txt
+Features → Age, Experience, Education, Job_Change
+Target   → Salary
+```
+
+*The target depends on the ML problem we are trying to solve. The same dataset can have different targets for different ML tasks.*
+
+---
+
+**X and y**
+
+```python
+X = features
+y = target
+```
+
+*For example*
+
+```python
+X = df[["Age", "Income", "Tenure"]]
+y = df["Churn"]
+```
+
+*So*
+- *```X``` → input features*
+- *```y``` → output/target*
+
+---
+
+**Is the Target available during prediction?**
+
+**During Training:** *The model has ```Features + Target```*
+
+**Example:**
+
+```txt
+Age = 25
+Income = 40,000
+Tenure = 12
+Churn = No
+```
+
+*The model uses these known examples to learn*
+
+**During Prediction:** *The target is unknown*
+
+*For a new customer*
+
+```txt
+Age = 29
+Income = 45,000
+Tenure = 10
+Churn = ?
+```
+
+*The model predicts ```Churn = No```*
+
+*The target is known in the training data but is what we want to predict for new data.*
+
+---
+
+**What is a Label?**
+
+*Label is another term commonly used for the known output in supervised learning.*
+
+*For example*
+
+```txt
+Email → Features
+Spam → Label
+```
+
+*So*
+
+```txt
+Feature → information used to make prediction
+Label   → known answer
+```
+
+---
+
+**Can the target also be given as a feature?**
+
+*No, not when training a normal predictive model*
+
+*Suppose*
+
+```txt
+Age
+Income
+Tenure
+Churn
+```
+
+*and you are predicting ```Churn```. You should not do*
+
+```txt
+X = Age, Income, Tenure, Churn
+y = Churn
+```
+
+*because the model is being given the answer it is supposed to predict. This can create **data leakage** and produce misleadingly good performance.*
+
+---
+
+### **Observation / Instance**
 
 
