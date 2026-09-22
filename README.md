@@ -30,6 +30,7 @@ Hey everybody!!!
     - [**Feature**](#feature)
     - [**Target / Label**](#target--label)
     - [**Observation / Instance**](#observation--instance)
+    - [**Training / Validation / Test Data**](#training--validation--test-data)
 
 # **ML and Data Foundations**
 
@@ -2467,5 +2468,87 @@ y = Churn
 ---
 
 ### **Observation / Instance**
+
+**What is an Observation?**
+
+*An observation is one individual example or record in a dataset. In a tabular dataset, an observation is usually on row.*
+
+**Example:** *Suppose we have customer data*
+
+| Age | Income | Tenure | Churn |
+| --- | ------ | ------ | ----- |
+|  25 |  40000 |     12 | No    |
+|  42 |  65000 |      3 | Yes   |
+|  31 |  50000 |     24 | No    |
+
+*Here*
+- **Columns** → *variables/features/target*
+- **Rows** → *observations*
+
+*So we have 3 observations*
+
+*For example, this row ```42 | 65000 | 3 | Yes``` is one observation.*
+
+---
+
+**Observation vs Feature**
+
+| Age | Income | Tenure | Churn |
+| --- | ------ | ------ | ----- |
+|  25 |  40000 |     12 | No    |
+|  42 |  65000 |      3 | Yes   |
+
+**Observation:** *One row ```25 | 40000 | 12 | No```*
+
+**Feature:** *One input column*
+
+```txt
+Age
+Income
+Tenure
+```
+
+---
+
+**Observation does not always means a Person**
+
+*An observation can represent different things depending on the problem*
+
+- **Customer churn:** *```One observation = one customer```*
+- **House-price prediction:** *```One observation = one house```*
+- **Fraud detection:** *```One observation = one transaction```*
+- **Medical prediction:** *```One observation = one patient/case```*
+- **Sales forecasting:** *```One observation = one time period```*
+- **Image classification:** *```One observation = one image```*
+
+*An observation is one individual example relevant to the ML problem*
+
+---
+
+```txt
+Dataset
+   ↓
+Observations / Instances
+   ↓
+Features + Target
+```
+
+**Example:**
+
+```txt
+Customer Dataset
+       ↓
+   Customer 1
+   Customer 2
+   Customer 3
+       ↓
+Age, Income, Tenure → Features
+Churn                → Target
+```
+
+---
+
+### **Training / Validation / Test Data**
+
 
 
