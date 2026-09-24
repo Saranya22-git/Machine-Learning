@@ -3541,4 +3541,68 @@ High risk of churn
 
 ### **Training**
 
+*Training is the process through which a machine-learning model learns its parameters from training data*
+
+---
+
+**Basic Training Process**
+
+*Suppose we want to predict customer churn*
+
+*We have*
+
+```txt
+Features → Age, Tenure, Monthly Charges, Support Calls
+Target   → Churn
+```
+
+*We provide training examples*
+
+```txt
+Training Data
+      ↓
+ML Algorithm
+      ↓
+Model learns patterns
+      ↓
+Parameters are adjusted
+      ↓
+Trained Model
+```
+
+*During training, the model's parameters are learned/adjusted using the training data*
+
+---
+
+**What happens during Training?**
+
+*At a high level*
+
+```txt
+1. Give input data to model
+          ↓
+2. Model produces an output
+          ↓
+3. Compare output with actual target
+          ↓
+4. Calculate how wrong the model is
+          ↓
+5. Adjust parameters
+          ↓
+6. Repeat
+```
+
+*This process continues until the model reaches a suitable level of performance or the chosen training procedure stops. The exact mechanism depends on the algorithm.*
+
+---
+
+**Simple Example**
+
+*Suppose the actual target is ```Actual Churn = Yes``` The model initially predicts ```Prediction = No``` The model has made an error*
+
+*During training the learning algorithm uses an appropriate objective/loss and updates the model's parameters so that it can improve its predictions*
+
+*After many training examples and iterations, the model may learn useful relationships between ```Customer characteristics → Churn```*
+
+---
 
