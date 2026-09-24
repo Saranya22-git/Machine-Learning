@@ -38,6 +38,7 @@ Hey everybody!!!
     - [**Parameters**](#parameters)
     - [**Hyperparameters**](#hyperparameters)
     - [**Prediction**](#prediction)
+    - [**Inference**](#inference)
 
 # **ML and Data Foundations**
 
@@ -3256,4 +3257,100 @@ Prediction            → No
 
 ---
 
+**Prediction vs Actual Value**
+
+*Suppose we're predicting house prices*
+
+```txt
+Actual price      = ₹80 lakh
+Predicted price   = ₹76 lakh
+```
+
+*The model's prediction is ```₹76 lakh```*
+
+*The actual target is ```₹80 lakh```*
+
+*We can then calculate an appropriate evaluation metric to understand how well the model performed*
+
+---
+
+**Classification Prediction can be more than just a Label**
+
+*A classification model can sometimes produce a probability for each class*
+
+*For example*
+
+```txt
+Customer
+   ↓
+Model
+   ↓
+Probability of churn = 0.82
+```
+
+*That means the model estimates an 82% probability for the churn class under that model's probability interpretation.*
+
+*A final class prediction may then be obtained using a decision threshold*
+
+*For example*
+
+```txt
+Probability ≥ threshold → Churn
+Probability < threshold → Not Churn
+```
+
+---
+
+**Prediction on New Data**
+
+*Suppose the model was trained on ```10,000 customers```*
+
+*Now a new customer arrives*
+
+```txt
+Age = 27
+Income = ₹45,000
+Tenure = 6
+Monthly Charges = ₹899
+```
+
+*We provide these features to the trained model*
+
+```txt
+New Customer
+     ↓
+Trained Model
+     ↓
+Prediction
+```
+
+*For example ```Predicted Churn = Yes```*
+
+---
+
+**Prediction vs Training**
+
+**Training:** *The model learns parameters from training data*
+
+```txt
+Training Data
+     ↓
+Training
+     ↓
+Learned Model
+```
+
+**Prediction:** *The trained model is used to produce an output*
+
+```txt
+New Data
+   ↓
+Trained Model
+   ↓
+Prediction
+```
+
+---
+
+### **Inference**
 
