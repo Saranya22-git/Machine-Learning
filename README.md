@@ -39,6 +39,7 @@ Hey everybody!!!
     - [**Hyperparameters**](#hyperparameters)
     - [**Prediction**](#prediction)
     - [**Inference**](#inference)
+    - [**Training**](#training)
 
 # **ML and Data Foundations**
 
@@ -3353,4 +3354,191 @@ Prediction
 ---
 
 ### **Inference**
+
+*Inference is the process of using a trained ML model to make predictions on new, unseen data.*
+
+---
+
+**Basic Flow**
+
+```txt
+Training Data
+      ↓
+   Training
+      ↓
+ Trained Model
+      ↓
+   New Data
+      ↓
+   Inference
+      ↓
+   Prediction
+```
+
+*For example, we train a customer-churn model using historical customer data*
+
+*Later a new customer arrives*
+
+```txt
+New Customer
+     ↓
+Trained Churn Model
+     ↓
+Inference
+     ↓
+Churn = Yes
+```
+
+*The process of applying the trained model to that new customer is inference*
+
+---
+
+**Training vs Inference**
+
+| Training                         | Inference                       |
+| -------------------------------- | ------------------------------- |
+| Model learns from data           | Model is used on new data       |
+| Learns parameters                | Uses learned parameters         |
+| Usually computationally heavier  | Usually needs to be faster      |
+| Happens during model development | Happens when making predictions |
+
+*Training teaches the model. Inference uses the model*
+
+---
+
+**Real-World Example - Fraud Detection**
+
+*Imagine a bank trains a fraud detection model using millions of historical transactions*
+
+**Training**
+
+```txt
+Historical Transactions
+          ↓
+       Training
+          ↓
+    Fraud Detection Model
+```
+
+*Later you make a new transaction*
+
+```txt
+₹25,000 transaction
+     ↓
+Trained Model
+     ↓
+Inference
+     ↓
+Fraud probability / prediction
+```
+
+*The bank is performing inference when it applies the trained model to your transaction*
+
+---
+
+**Inference is not Retraining**
+
+*Suppose a model is already trained. When a new customer arrives*
+
+```txt
+New Customer
+     ↓
+Model
+     ↓
+Prediction
+```
+
+*The model is not normally retrained from scratch for every customer. It is simply being used to make a prediction. That's inference*
+
+---
+
+**Batch Inference vs Real-Time Inference**
+
+- **Real-Time/Online Inference:** *The model makes a prediction when a request arrives*
+
+     **Example:**
+
+     ```txt
+     User uploads image
+          ↓
+     Model
+          ↓
+     Prediction immediately
+     ```
+
+     **Examples:**
+     - *Fraud detection during a transaction*
+     - *Spam detection when an email arrives*
+     - *Recommendation when a user opens an app*
+
+- **Batch Inference:** *The model makes predictions for many records together, usually on a schedule*
+
+**Example:**
+
+```txt
+10 million customers
+       ↓
+Trained Model
+       ↓
+Predictions
+       ↓
+Daily customer-risk report
+```
+
+*For example a company might run predictions every night for all customers*
+
+```txt
+Real-time inference → prediction when needed
+Batch inference → predictions for many records together
+```
+
+---
+
+**ML Application Example**
+
+*Suppose you built your ChurnGuard AI project*
+
+*Your workflow could be*
+
+```txt
+
+Historical Customer Data
+          ↓
+       Training
+          ↓
+   Trained Model
+          ↓
+      Flask App
+          ↓
+New Customer Details
+          ↓
+       Inference
+          ↓
+ Churn Prediction
+```
+
+*For example*
+
+```txt
+Input:
+Tenure = 3 months
+Monthly Charges = ₹1299
+Support Calls = 8
+
+       ↓
+
+Inference
+
+       ↓
+
+Prediction:
+High risk of churn
+```
+
+*The Flask Application is using the trained model to perform inference*
+
+---
+
+### **Training**
+
 
