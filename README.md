@@ -35,6 +35,8 @@ Hey everybody!!!
       - [**Validation Data**](#validation-data)
       - [**Test Data**](#test-data)
     - [**Model**](#model)
+    - [**Parameters**](#parameters)
+    - [**Hyperparameters**](#hyperparameters)
 
 # **ML and Data Foundations**
 
@@ -2859,4 +2861,245 @@ Training data
         ↓
 Trained Decision Tree model
 ```
+
+---
+
+### **Parameters**
+
+*A parameter is a value that the ML model learns from the training data during training.*
+
+**Example:** *Suppose we want to predict salary based on years of experience*
+
+*A simple model might looks like ```Salary = w × Experience + b```*
+
+*Here*
+- *```w``` = coefficient/weight*
+- *```b``` = intercept/bias*
+
+*During training the model learns suitable values for ```w``` and ```b```*
+
+*For example it might learn*
+
+```txt
+w = 4
+b = 5
+```
+
+*So the learned model becomes ```Salary = 4 × Experience + 5``` Those learned values are parameters*
+
+---
+
+**Why are Parameters important?**
+
+*Parameters determine how the model behaves*
+
+*Suppose the model learns ```w = 4``` It means the model has learned a particular relationship between experience and salary*
+
+*If training data changes, the model may learn different parameter values*
+
+```txt
+Training Data A
+      ↓
+Parameters A
+
+Training Data B
+      ↓
+Parameters B
+```
+
+*So parameters are learned from data, not normally manually chosen by us*
+
+---
+
+**Parameters vs Features**
+
+**Feature:** *A feature is an input variable*
+
+**Example:**
+
+```txt
+Experience
+Age
+Education
+```
+
+**Parameter:** *A parameter is a value learned by the model*
+
+**Example:**
+
+```txt
+w = 4
+b = 5
+```
+
+*So*
+
+```txt
+Feature → input to the model
+Parameter → learned value inside the model
+```
+
+---
+
+**Parameters vs Hyperparameters**
+
+**Parameter:** *Learned by the model from training data*
+
+**Examples:**
+- *Linear regression coefficients*
+- *Logistic regression coefficients*
+- *Neural-network weights and biases*
+
+**Hyperparameter:** *Set by us before/during training, the model does not learn it directly from the training data*
+
+**Examples:**
+- *Decision tree maximum depth*
+- *K in KNN*
+- *Learning rate*
+- *Number of trees in Random Forest*
+
+*Parameters are learned. Hyperparameters are chosen/tuned*
+
+---
+
+**Simple Analogy**
+
+*Think about studying for an interview*
+
+**Parameters:** *You study questions and gradually learn the answers ```Practice → Learning → Knowledge``` The knowledge you learn is similar to parameters learned from data*
+
+**Hyperparameters:** *Before studying you decide*
+
+```txt
+Study 2 hours
+Practice 50 questions
+Take 3 mock interviews
+```
+
+*These are choices you make rather than something automatically learned from the practice data*
+
+---
+
+**Example: Logistic Regression**
+
+*Suppose we're predicting whether a customer will churn*
+
+*Features*
+
+```txt
+Age
+Tenure
+Monthly Charges
+Support Calls
+```
+
+*Logistic regression learns a coefficient for each feature*
+
+```txt
+Age               → coefficient
+Tenure            → coefficient
+Monthly Charges   → coefficient
+Support Calls     → coefficient
+```
+
+*These coefficients are parameters. The model uses them to calculate the prediction*
+
+---
+
+**Example: Neural Network**
+
+*A neural network can have a huge number of parameters*
+
+*Its parametes include ```Weights Biases```*
+
+*During training these values are adjusted so that the model's predictions become better according to its training objective. You don't manually specify every weight. The training process learns them.*
+
+---
+
+### **Hyperparameters**
+
+*A hyperparameter is a setting that we choose before or during model training that controls how the learning process or model is configured.*
+
+**Example:** *Suppose we're using a Decision Tree*
+
+*We can control ```Maximum depth = 5``` The tree doesn't learn ```5``` as a model parameter from the training data. We choose it. So ```max_depth → Hyperparameter``` The tree then learns its actual splitting decisions from the training data.*
+
+---
+
+**Parameter vs Hyperparameter**
+
+|                    | Parameter              | Hyperparameter         |
+| ------------------ | ---------------------- | ---------------------- |
+| Who determines it? | Model learns it        | We choose/tune it      |
+| When?              | During training        | Before/during training |
+| Example            | Regression coefficient | Learning rate          |
+| Example            | Neural-network weight  | Number of trees        |
+| Example            | Neural-network bias    | Tree maximum depth     |
+
+---
+
+**Common Hyperparameter Examples**
+
+**Decision Tree**
+
+```txt
+max_depth
+min_samples_split
+min_samples_leaf
+```
+
+*These control how the tree is built*
+
+**Random Forest**
+
+```txt
+n_estimators
+max_depth
+```
+
+*```n_estimators``` controls the number of trees*
+
+**KNN**
+
+*```k``` determines how many neighboring points are considered*
+
+**SVM**
+
+```txt
+C
+kernel
+gamma
+```
+
+**Neural Networks**
+
+```txt
+learning_rate
+batch_size
+number_of_epochs
+number_of_layers
+```
+
+---
+
+**Why do we Tune Hyperparameters?**
+
+*Different hyperparameter settings can produce different model performance*
+
+*For example*
+
+```txt
+Decision Tree
+
+max_depth = 2 → Model A
+max_depth = 5 → Model B
+max_depth = 15 → Model C
+```
+
+*We evaluate these choices using appropriate validation procedures and select a suitable configuration. This process is called **Hyperparameter tuning***
+
+---
+
+
+
 
