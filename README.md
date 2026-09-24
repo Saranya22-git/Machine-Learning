@@ -40,6 +40,8 @@ Hey everybody!!!
     - [**Prediction**](#prediction)
     - [**Inference**](#inference)
     - [**Training**](#training)
+    - [**Evaluation**](#evaluation)
+    - [**Loss**](#loss)
 
 # **ML and Data Foundations**
 
@@ -3605,4 +3607,180 @@ Trained Model
 *After many training examples and iterations, the model may learn useful relationships between ```Customer characteristics → Churn```*
 
 ---
+
+### **Evaluation**
+
+*Evaluation is the process of measuring how well a trained machine-learning model performs on data it should be tested against.*
+
+---
+
+**Why do we Evaluate a Model?**
+
+*Training a model doesn't automatically mean it is good*
+
+*Suppose you train a churn model*
+
+*It predicts*
+
+```txt
+Customer 1 → No
+Customer 2 → Yes
+Customer 3 → No
+...
+```
+
+*We need to know "How accurate or useful are these predictions?"*
+
+---
+
+**Basic Evaluation Flow**
+
+```txt
+Trained Model
+      ↓
+Validation/Test Data
+      ↓
+Predictions
+      ↓
+Compare with Actual Target
+      ↓
+Evaluation Metric
+      ↓
+Model Performance
+```
+
+*For example*
+
+```txt
+Actual      → Yes
+Prediction  → Yes
+```
+
+*The model got that example correct*
+
+*Another*
+
+```txt
+Actual      → Yes
+Prediction  → No
+```
+
+*The model got that example wrong. The evaluation process summarizes these kinds of outcomes*
+
+---
+
+**Evaluation depends on the Problem**
+
+*You don't use the same metric for every ML problem*
+
+**Classification:** *Common metric include*
+- *Accuracy*
+- *Precision*
+- *Recall*
+- *F1-score*
+- *ROC-AUC*
+
+**Regression:** *Common metrics include*
+- *MAE*
+- *MSE*
+- *RMSE*
+- *R²*
+
+*The appropriate evaluation metric depends on the ML problem and business objective*
+
+---
+
+**Evaluation vs Training**
+
+**Training:** *The model learns its parameters*
+
+```txt
+Training Data
+      ↓
+Learn Parameters
+```
+
+**Evaluation:** *We measure how well the trained model performs*
+
+```txt
+Trained Model
+      ↓
+Validation/Test Data
+      ↓
+Measure Performance
+```
+
+---
+
+**Validation vs Test Evaluation**
+
+```txt
+Training → Learn
+
+Validation → Development decisions
+
+Test → Final evaluation
+```
+
+**Validation evaluation:** *Used while developing the model*
+
+*For example*
+
+```txt
+Model A → Validation score = 82%
+Model B → Validation score = 87%
+```
+
+*You may use this information to make development decisions*
+
+**Test evaluation:** *After selecting the final model, evaluate it on the held-out test set*
+
+```txt
+Final Model
+     ↓
+Test Data
+     ↓
+Final Performance
+```
+
+---
+
+**Simple Example**
+
+*Suppose you have 100 test examples. The model correctly predicts 90 of them.*
+
+*For a simple accuracy calculation*
+
+```txt
+Accuracy = Correct Predictions / Total Predictions
+
+         = 90 / 100
+
+         = 90%
+```
+
+*So the model's accuracy is 90%. But don't conclude that 90% accuracy automatically means the model is good. For some problems accuracy can be misleading.*
+
+---
+
+**Evaluation is more than One number**
+
+*Suppose two classification models have*
+
+```txt
+Model A → Accuracy = 95%
+Model B → Accuracy = 92%
+```
+
+*You shouldn't automatically choose ```Model A``` just because its accuracy is higher. The right metric depends on the cost of different errors.*
+
+*For example, in some fraud-detection problems, missing a fraudulent transaction may be much more important than incorrectly flagging a legitimate transaction.*
+
+*So you may care more about recall, precision or another appropriate metric*
+
+*This is why **Metric selection should be connected to the actual problem**.*
+
+---
+
+### **Loss**
 
