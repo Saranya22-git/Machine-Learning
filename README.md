@@ -37,6 +37,7 @@ Hey everybody!!!
     - [**Model**](#model)
     - [**Parameters**](#parameters)
     - [**Hyperparameters**](#hyperparameters)
+    - [**Prediction**](#prediction)
 
 # **ML and Data Foundations**
 
@@ -3100,6 +3101,159 @@ max_depth = 15 → Model C
 
 ---
 
+**Example: KNN**
 
+*Suppose you're using KNN for classification. You choose ```k = 3``` The model considers the 3 nearest neighbors when making a prediction*
+
+*If you instead choose ```k = 10``` the behavior changes. ```k``` is a hyperparameter*
+
+*The KNN algorithm doesn't learn ```k``` as a parameter in the same way that linear regression learns coefficients*
+
+---
+
+**Example: Neural Network**
+
+*Suppose we train a neural network*
+
+*We might choose*
+
+```txt
+Learning rate = 0.001
+Batch size = 32
+Epochs = 20
+```
+
+*These are hyperparameters*
+
+*During training the network learns*
+
+```txt
+Weights
+Biases
+```
+
+*These are parameters*
+
+*So*
+
+```txt
+Hyperparameters
+      ↓
+Control training
+
+Parameters
+      ↓
+Learned during training
+```
+
+---
+
+### **Prediction**
+
+*A prediction is the output produced by a trained machine-learning model when it receives input data.*
+
+---
+
+**Basic Flow**
+
+*After the model has been trained*
+
+```txt
+New Input
+   ↓
+Trained Model
+   ↓
+Prediction
+```
+
+**Example:**
+
+```txt
+Age = 30
+Tenure = 8 months
+Monthly Charges = ₹999
+Support Calls = 5
+```
+
+*The trained churn model might predict ```Churn = Yes``` That output is the prediction*
+
+---
+
+**Prediction in Classification**
+
+*In classification, the prediction is a category/class*
+
+**Example:**
+
+**Spam detection**
+
+```txt
+Email
+  ↓
+Model
+  ↓
+Spam
+```
+
+*Possible predictions ```Spam``` ```Not Spam```*
+
+**Customer Churn**
+
+```txt
+Customer information
+       ↓
+      Model
+       ↓
+    Churn = Yes
+```
+
+*The prediction is a class label*
+
+---
+
+**Prediction in Regression**
+
+*In regression, the prediction is usually a numerical value*
+
+**Example:**
+
+**House Price Prediction**
+
+- **Input:**
+
+     ```txt
+     Area = 1500 sq.ft
+     Bedrooms = 3
+     Location = Hyderabad
+     ```
+
+- **Model:** *```↓````*
+- **Prediction:** *```₹85,00,000```*
+
+*Here ```₹85,00,000``` is the model's prediction*
+
+---
+
+**Prediction vs Target**
+
+**Target:** *The actual value we want to predict*
+
+**Prediction:** *The value produced by the model*
+
+**Example:**
+
+```txt
+Actual Churn   = Yes
+Model predicts = No
+```
+
+*So*
+
+```txt
+Target / Actual value → Yes
+Prediction            → No
+```
+
+---
 
 
