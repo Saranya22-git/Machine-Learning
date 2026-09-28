@@ -3784,3 +3784,177 @@ Model B → Accuracy = 92%
 
 ### **Loss**
 
+*Loss is a numerical value that tells us how far the model's prediction is from the actual target.*
+
+*In simple words, Loss = how wrong the model's prediction is*
+
+*The training process uses the loss to guide the model toward better predictions*
+
+---
+
+**Example:** *Suppose we're predicting house prices*
+
+*Actual price ```₹80 lakh```*
+
+*Model predictions ```₹70 lakh```*
+
+*The prediction is wrong by ```₹10 lakh```*
+
+*A loss function converts this prediction error into a numerical value according to a particular formula*
+
+```txt
+Actual Target
+      ↓
+Compare
+      ↑
+Prediction
+      ↓
+Loss
+```
+
+---
+
+**Why do we need Loss?**
+
+*During training, the model needs some way to know "How wrong am I?"*
+
+*Loss provides that signal*
+
+```txt
+Input
+  ↓
+Model
+  ↓
+Prediction
+  ↓
+Calculate Loss
+  ↓
+Adjust Parameters
+  ↓
+Repeat
+```
+
+*The goal of training is generally to minimize the chosen loss/objective.*
+
+---
+
+**Loss Function**
+
+*A loss function is the mathematical rule used to calculate the loss.*
+
+*For example suppose*
+
+```txt
+Actual = 10
+Prediction = 8
+```
+
+*One loss function might calculate the error based on the squared difference*
+
+```txt
+(10 - 8)² = 4
+```
+
+*So the loss for that example would be ```4``` under that particular loss function*
+
+*Different ML algorithms and problems can use different loss function*
+
+---
+
+**Loss vs Error**
+
+**Error:** *Generally refers to the difference between an actual value and a prediction*
+
+*For example*
+
+```txt
+Actual = 10
+Prediction = 8
+
+Error = 10 - 8 = 2
+```
+
+**Loss:** *A loss function transforms prediction errors into a numerical qunatity used to guide model training*
+
+*For example*
+
+```txt
+Error → Loss Function → Loss
+```
+
+*Error describes the prediction difference; loss is the value produced by a chosen loss function*
+
+---
+
+**Loss in Regression**
+
+*For regression problems common loss function include*
+
+**Mean Squared Error (MSE):** *It measures the average squared difference between actual and predicted values*
+
+```txt
+Actual − Prediction
+        ↓
+      Square
+        ↓
+     Average
+```
+
+*Large errors receive more weight because they are squared*
+
+**Mean Absolute Error (MAE):** *It uses the absolute difference*
+
+```txt
+|Actual − Prediction|
+```
+
+*and averages those errors*
+
+---
+
+**Loss in Classification**
+
+*Classification problems can use different loss functions*
+
+*For example, log loss/cross-entropy loss is commonly used for classification models*
+
+*For example, logistic regression commonly uses log loss (cross-entropy) as its optimization objective*
+
+---
+
+**Loss vs Evaluation Metric**
+
+**Loss:** *Primarily used to guide model training/optimization*
+
+```txt
+Prediction
+    ↓
+Loss
+    ↓
+Parameter updates
+```
+
+**Evaluation Metric:** *Used to measure model performance for a particular purpose*
+
+**Example:**
+
+```txt
+Classification → Precision, Recall, F1
+Regression → MAE, RMSE, R²
+```
+
+*Loss helps the model learn, evaluation metrics help us judge performance*
+
+---
+
+**Lower Loss is usually better**
+
+```txt
+Lower loss → Better fit according to that loss
+Higher loss → Worse fit according to that loss
+```
+
+*The meaning depends on the particular loss function and its definition*
+
+---
+
