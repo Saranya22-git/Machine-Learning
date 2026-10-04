@@ -42,6 +42,9 @@ Hey everybody!!!
     - [**Training**](#training)
     - [**Evaluation**](#evaluation)
     - [**Loss**](#loss)
+    - [**Metric**](#metric)
+    - [**Epoch**](#epoch)
+    - [**Batch**](#batch)
 
 # **ML and Data Foundations**
 
@@ -3957,4 +3960,201 @@ Higher loss → Worse fit according to that loss
 *The meaning depends on the particular loss function and its definition*
 
 ---
+
+### **Metric**
+
+*A metric is a numerical measure used to evaluate how well an ML model is performing for a particular task.*
+
+---
+
+**Why do we need Metrics?**
+
+*Suppose you train two customer-churn models*
+
+```txt
+Model A → ?
+Model B → ?
+```
+
+*We need a way to compare them. A metric gives us a measurable way to answer "How well is this model performing?"*
+
+*For example*
+
+```txt
+Model A → F1-score = 0.82
+Model B → F1-score = 0.89
+```
+
+*Depending on the business objective and evaluation setup, Model B may be preferable*
+
+---
+
+**Metric depends on the Problem**
+
+*There is no single metric that is best for every ML problem*
+
+**Classification:** *Common metrics*
+- *Accuracy*
+- *Precision*
+- *Recall*
+- *F1-score*
+- *ROC-AUC*
+
+**Regression:** *Common metrics*
+- *MAE*
+- *MSE*
+- *RMSE*
+- *R²*
+
+---
+
+### **Epoch**
+
+*An epoch is one complete pass through the entire training dataset during model training*
+
+---
+
+**Simple Example**
+
+*Suppose your training dataset contains ```10,000 training examples``` If the model processes all 10,000 examples once ```→ 1 epoch``` If it processes the same 10,000 examples again ```→ 2 epochs``` and ```10 epochs``` means the model has gone through the training dataset 10 times*
+
+---
+
+**Why do we need Multiple Epochs?**
+
+*A model usually doesn't learn everything perfectly from one pass through the data.*
+
+*During training*
+
+```txt
+Epoch 1 → Learn initial patterns
+Epoch 2 → Adjust parameters further
+Epoch 3 → Improve further
+...
+```
+
+*The model repeatedly updates its parameters to reduce the training objective/loss. So multiple epochs allow the model to progressively learn from the training data*
+
+---
+
+**Epoch vs Training**
+
+**Training:** *The overall process of learning model parameters*
+
+**Epoch:** *One complete pass through the training dataset during that process*
+
+```txt
+Training
+│
+├── Epoch 1
+├── Epoch 2
+├── Epoch 3
+├── ...
+└── Epoch N
+```
+
+*Training is the process an epoch is one complete pass within that process*
+
+---
+
+**Epoch vs Batch**
+
+*Suppose you have*
+
+```txt
+Training examples = 1,000
+Batch size = 100
+```
+
+*The model processes*
+
+```txt
+Batch 1 → 100 examples
+Batch 2 → 100 examples
+Batch 3 → 100 examples
+...
+Batch 10 → 100 examples
+```
+
+*After all 10 batches have been processed ```→ 1 epoch completed```*
+
+*So*
+
+```txt
+Batch → Smaller group of training examples
+Epoch → One complete pass through all training examples
+```
+
+---
+
+**What is an Iteration?**
+
+*If*
+
+```txt
+Training examples = 1,000
+Batch size = 100
+```
+
+*then approximately ```10 batches = 1 epoch```*
+
+*If each batch causes one parameter-update step that's approximately ```10 iterations = 1 epoch```*
+
+```txt
+1 epoch = 10 batches = 10 training iterations/updates
+```
+
+---
+
+**What happens if we use too few Epochs?**
+
+*Suppose we train for only a very small number of epochs. The model may not have learned enough from the training data. This can contribute to underfitting.*
+
+```txt
+Too little training
+       ↓
+Model hasn't learned enough
+       ↓
+Underfitting
+```
+
+---
+
+**What happens if we use too many Epochs?**
+
+*More epochs aren't automatically better. If the model keeps adapting too closely to the training data it can start to overfit*
+
+*For example*
+
+```txt
+Training performance → keeps improving
+Validation performance → starts getting worse
+```
+
+*This can indicate overfitting. So we don't simple say "More epochs = better mode"*
+
+*We choose the training duration based on model performance and validation behavior*
+
+---
+
+```txt
+Dataset
+   ↓
+Split into batches
+   ↓
+Process all batches
+   ↓
+1 Epoch
+   ↓
+Repeat
+   ↓
+Multiple Epochs
+```
+
+---
+
+### **Batch**
+
+**
+
 
