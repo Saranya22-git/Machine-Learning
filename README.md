@@ -4281,3 +4281,91 @@ Batch 3 → update parameters
 
 ### **Baseline**
 
+*A baseline is a simple reference model or simple prediction strategy that we use as a starting point for comparison*
+
+---
+
+**Why do we need a Baseline?**
+
+*Suppose you're building a customer churn model. You train a sophisticated model and get ```Model accuracy = 91%``` Sounds good right? But what if*
+
+```txt
+90% of customers don't churn
+10% of customers churn
+```
+
+*A very simple strategy could predict ```Everyone → No Churn``` and already achieve ```90% accuracy``` So your ML model improved accuracy from ```90% → 91%```*
+
+---
+
+**Simple Example**
+
+*Suppose you're predicting house prices. Before building a sophisticated ML model, you could create a simple baseline such as ```Predict the average house price for every house```*
+
+*For example ```Average price = ₹70 lakh```*
+
+*Baseline predictions*
+
+```txt
+House A → ₹70L
+House B → ₹70L
+House C → ₹70L
+```
+
+*Then you train a regression model*
+
+```txt
+Baseline RMSE → ₹20L
+ML Model RMSE → ₹12L
+```
+
+*Now you have evidence that the ML model provides meaningful improvement over the simple approach*
+
+---
+
+**Baseline depends on the Problem**
+
+**Classification:** *A baseline could be ```Always predict the majority class```*
+
+**Example:**
+
+```txt
+90% → No Churn
+10% → Churn
+```
+
+*Baseline ```Always predict No Churn```*
+
+**Regression:** *A simple baseline could be ```Always predict the mean target value```*
+
+**Example:** *```Average house price = ₹70L``` Predict ₹70L for every house*
+
+**Time Series:** *A simple baseline might be ```Predict that the next value will be the same as the most recent value```*
+
+*For example*
+
+```txt
+Yesterday's sales = 1,000
+Baseline prediction for today = 1,000
+```
+
+*The exact baseline should match the problem*
+
+---
+
+**Baseline vs ML model**
+
+```txt
+Business Problem
+      ↓
+Simple Baseline
+      ↓
+Build ML Model
+      ↓
+Compare Performance
+      ↓
+Does ML meaningfully improve?
+```
+
+---
+
