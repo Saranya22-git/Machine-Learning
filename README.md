@@ -45,6 +45,7 @@ Hey everybody!!!
     - [**Metric**](#metric)
     - [**Epoch**](#epoch)
     - [**Batch**](#batch)
+    - [**Baseline**](#baseline)
 
 # **ML and Data Foundations**
 
@@ -4155,6 +4156,128 @@ Multiple Epochs
 
 ### **Batch**
 
-**
+*A batch is a smaller group of training examples processed through during model training*
 
+---
+
+**Simple Example**
+
+*Suppose you have*
+
+```txt
+Training dataset = 1,000 examples
+Batch size = 100
+```
+
+*Instead of processing all 1000 examples at once the model processes*
+
+```txt
+Batch 1 → 100 examples
+Batch 2 → 100 examples
+Batch 3 → 100 examples
+...
+Batch 10 → 100 examples
+```
+
+*After processing all 10 batches 1 epoch is completed*
+
+---
+
+**Batch Size**
+
+*Batch size is the number of training examples included in one batch*
+
+*For example*
+
+```txt
+Dataset = 10,000 examples
+Batch size = 200
+```
+
+*```10,000 ÷ 200 = 50 batches``` So one epoch contains about 50 batches*
+
+---
+
+**Batch vs Epoch**
+
+| Batch | Epoch |
+|---|---|
+| A subset of training data | Complete training dataset |
+| Processed in one step | Completed after all batches are processed |
+| Example: 100 samples | Example: all 10,000 samples |
+
+```txt
+10,000 training examples
+        ↓
+Split into batches
+        ↓
+100 + 100 + 100 + ... + 100
+        ↓
+All batches processed
+        ↓
+1 Epoch
+```
+
+---
+
+**Why use Batches?**
+
+*Processing the entire dataset at once can require a lot of memory especially with large datasets*
+
+*Instead*
+
+```txt
+Large Dataset
+     ↓
+Smaller Batches
+     ↓
+Process gradually
+```
+
+*This makes training more practical for many ML and deep-learning workflows*
+
+---
+
+**What happens during One Batch?**
+
+```txt
+Batch
+  ↓
+Model makes predictions
+  ↓
+Calculate loss
+  ↓
+Calculate/update learning signal
+  ↓
+Parameters updated
+```
+
+*Then the model moves to the next batch*
+
+*For example*
+
+```txt
+Batch 1 → update parameters
+Batch 2 → update parameters
+Batch 3 → update parameters
+...
+```
+
+*After all batches are processed ```→ 1 epoch completed```*
+
+---
+
+**Batch Size can affect Training**
+
+*Suppose you choose ```Batch size = 32``` versus ```Batch size = 512```*
+
+*The training behavior can differ. Batch size can affect*
+- *Memory usage*
+- *Number of updates per epoch*
+- *Training speed*
+- *Training dynamics*
+
+---
+
+### **Baseline**
 
